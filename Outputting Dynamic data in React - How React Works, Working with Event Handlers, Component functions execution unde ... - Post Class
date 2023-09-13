@@ -1,0 +1,32 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [name, setName] = useState('');
+  const [displayText, setDisplayText] = useState('');
+
+  const handleInputChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleButtonClick = () => {
+    setDisplayText(name);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        id="input"
+        value={name}
+        onChange={handleInputChange}
+        placeholder="Enter your name"
+      />
+      <button id="button" onClick={handleButtonClick}>
+        Set Name
+      </button>
+      <p id="text">{displayText}</p>
+    </div>
+  );
+}
+
+export default App;
