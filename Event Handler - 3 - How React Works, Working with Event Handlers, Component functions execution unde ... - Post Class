@@ -1,0 +1,42 @@
+import React, { Component } from 'react';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      textInputValue: '',
+      numInputValue: '',
+    };
+  }
+
+  handleInput = (event, inputName) => {
+    const inputValue = event.target.value;
+    this.setState((prevState) => ({
+      [inputName]: prevState[inputName] + inputValue,
+    }));
+
+    // Log the input value to the console
+    console.log(`Input in ${inputName} is ${this.state[inputName]}`);
+  };
+
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          id="text-input"
+          value={this.state.textInputValue}
+          onChange={(e) => this.handleInput(e, 'textInputValue')}
+        />
+        <input
+          type="number"
+          id="num-input"
+          value={this.state.numInputValue}
+          onChange={(e) => this.handleInput(e, 'numInputValue')}
+        />
+      </div>
+    );
+  }
+}
+
+export default App;
