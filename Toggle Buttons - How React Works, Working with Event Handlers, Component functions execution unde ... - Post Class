@@ -1,0 +1,25 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [button1Text, setButton1Text] = useState('OFF');
+  const [button2Text, setButton2Text] = useState('ON');
+
+  const handleClick = () => {
+    // Toggle the text values of both buttons
+    setButton1Text((prevText) => (prevText === 'OFF' ? 'ON' : 'OFF'));
+    setButton2Text((prevText) => (prevText === 'ON' ? 'OFF' : 'ON'));
+  };
+
+  return (
+    <div>
+      <button id="btn1" onClick={handleClick}>
+        {button1Text}
+      </button>
+      <button id="btn2" onClick={handleClick}>
+        {button2Text}
+      </button>
+    </div>
+  );
+}
+
+export default App;
