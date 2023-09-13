@@ -1,0 +1,26 @@
+import React from 'react';
+
+function App() {
+  // Define an array of Indian cities
+  const indianCities = [
+    'Mumbai',
+    'Delhi',
+    'Bangalore',
+    'Chennai',
+    'Kolkata',
+    // Add more cities as needed
+  ];
+
+  return (
+    <div>
+      <h1>Indian Cities</h1>
+      <ol>
+        {indianCities.map((city) => (
+          <li key={city.replace(/\s/g, '_')}>{city}</li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
+export default App;
